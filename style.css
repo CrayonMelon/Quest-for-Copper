@@ -1,0 +1,23 @@
+body {
+    margin-right: 250px;
+    margin-left: 250px;
+	margin-top: 60px;
+	margin-bottom: 60px;
+	background: -webkit-linear-gradient(red, green, blue );
+
+	
+	}	
+
+script {
+	border: 500px solid red;
+
+}
+
+
+h5 {
+	text-align: left;
+	font-style: italic;
+	font-size: 10;
+}
+
+
