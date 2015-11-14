@@ -19,7 +19,8 @@ function preload() {
 //Sprites goes here
 var Jeff;
 
-//Game Stuff goes here
+//Game Stuff goes here'
+//poop
 var cursors;
 var left;
 var right;
