@@ -12,7 +12,7 @@ function preload() {
   game.load.image('Stick', 'assets/Weapons/Wood_Stick.png');
   game.load.image('Wood-Axe', 'assets/Weapons/Wood_Axe.png');
   game.load.spritesheet('Jeff', 'assets/Sprites/Jeff.png', 40, 60);
-  game.load.tilemap('Lebel1', 'assets/Tiled Files/Lebeltest.csv', null, Phaser.Tilemap.CSV);
+  game.load.tilemap('Lebel1', 'assets/Tiled Files/Lebeltest.CSV', null, Phaser.Tilemap.CSV);
   game.load.image('Enivoremtn','assets/Tiled Files/Enivoremtn.png');
 }
 
@@ -26,7 +26,7 @@ var right;
 var idle;
 var up;
 var down;
-var layer;
+var Gary;
 
 
 function create() {
@@ -37,7 +37,7 @@ function create() {
 
   map = game.add.tilemap('Lebel1', 32, 32);
   map.addTilesetImage('Enivoremtn');
-  map.setCollisionBetween(32, 32);
+  map.setCollisionBetween(32);
 
   Gary = map.createLayer(0);
   Gary.resizeWorld();
@@ -64,7 +64,7 @@ function create() {
 
 function update() {
 
-  game.physics.arcade.collide(Jeff, Gary);
+ game.physics.arcade.collide(Jeff, Gary);
 
   Jeff.body.velocity.set(0);
 
