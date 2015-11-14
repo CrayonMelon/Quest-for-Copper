@@ -26,7 +26,7 @@ var right;
 var idle;
 var up;
 var down;
-var Gary;
+var layer;
 
 
 function create() {
@@ -37,11 +37,13 @@ function create() {
 
   map = game.add.tilemap('Lebel1');
   map.addTilesetImage('Enivoremtn');
-  map.setCollisionBetween(32);
+  map.setCollisionBetween(32, 32);
 
-  Gary = map.createLayer('Tiley Layar 1');
-  Gary.resizeWorld();
-  Gary.debug = true;
+  layer = map.createLayer('Tiley Layar 1');
+  // layer.resizeWorld();
+  layer.debug = true;
+
+  game.physics.enable(layer, Phaser.Physics.ARCADE);
 
 
   Jeff = game.add.sprite(40, 100, 'Jeff');
