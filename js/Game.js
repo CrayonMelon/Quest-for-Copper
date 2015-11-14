@@ -2,8 +2,7 @@
 var screenWidth = screen.width - 500;
 var screenHeight = screen.height - 220;
 
-var game = new Phaser.Game(screenWidth, screenHeight, Phaser.AUTO, '', { preload: preload, create: create, update: update, render: render
-});
+var game = new Phaser.Game(screenWidth, screenHeight, Phaser.AUTO, '', { preload: preload, create: create, update: update});
 
 
 function preload() {
@@ -38,24 +37,24 @@ function create() {
 
   map = game.add.tilemap('Lebel1', 32, 32);
   map.addTilesetImage('Enivoremtn');
-  map.setCollisionBetween(32, 32)
+  map.setCollisionBetween(32, 32);
 
   Gary = map.createLayer(0);
-  // layer.resizeWorld();
-  Gary.debug = true
+  Gary.resizeWorld();
+  Gary.debug = true;
 
 
   Jeff = game.add.sprite(40, 100, 'Jeff');
-  Jeff.smoothed = false
-  Jeff.anchor.setTo(.5, 0.5)
-  Jeff.debug = true
+  Jeff.smoothed = false;
+  Jeff.anchor.setTo(.5, 0.5);
+  Jeff.debug = true;
 
 
   left = Jeff.animations.add('left', [0,1], 10, true);
   right = Jeff.animations.add('right', [3,4], 10, true);
   idle = Jeff.animations.add('idle', [2], 1, true);
-  up = Jeff.animations.add('up', [6,7], 10, true)
-  down = Jeff.animations.add('down', [8,9], 10, true)
+  up = Jeff.animations.add('up', [6,7], 10, true);
+  down = Jeff.animations.add('down', [8,9], 10, true);
 
   game.physics.enable(Jeff, Phaser.Physics.ARCADE);
 
@@ -65,7 +64,7 @@ function create() {
 
 function update() {
 
-  game.physics.arcade.collide(Jeff, Gary, Bump)
+  game.physics.arcade.collide(Jeff, Gary);
 
   Jeff.body.velocity.set(0);
 
@@ -92,11 +91,8 @@ function update() {
     else
     {
         Jeff.play('idle');
+
     }
 
 
-}
-
-function Bump(Jeff, Gary) {
-  console.log("Me names Jeff");
 }
