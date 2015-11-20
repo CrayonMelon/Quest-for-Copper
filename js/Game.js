@@ -1,4 +1,10 @@
 //Fullscreen placement
+
+//found the problem, you needed the newer version of phaser.min.js
+//I didn't know how to message you or change the phaser.min.js so this will have to do.
+//( ͡° ͜ʖ ͡°)
+
+
 var screenWidth = screen.width - 500;
 var screenHeight = screen.height - 220;
 
